@@ -1,3 +1,10 @@
+import Header from "../components/Header";
+
 export default function NotFound() {
-  return <div>NotFoudn</div>;
+  return (
+    <div>
+      <Header />
+      NotFoudn
+    </div>
+  );
 }
