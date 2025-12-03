@@ -15,7 +15,7 @@ export default function Category() {
       <ul style={{display:'flex'}}>
         {currentCategoryArray.map((item) => (
           <li key={item.name}>
-            <Link>
+            <Link to={`/product/${item.id}`}>
               {item.name} {item.price}$
               <img src={item.img} alt={item.name} style={{width:'150px'}}/>
             </Link>
