@@ -11,17 +11,27 @@ export default function Category() {
 
   return (
     <div>
-      <h1>{categoryId}</h1>
-      <ul style={{display:'flex'}}>
-        {currentCategoryArray.map((item) => (
-          <li key={item.name}>
-            <Link to={`/product/${item.id}`}>
-              {item.name} {item.price}$
-              <img src={item.img} alt={item.name} style={{width:'150px'}}/>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {currentCategoryArray.length > 0 ? (
+        <>
+          <h1>{categoryId}</h1>
+          <ul style={{ display: "flex" }}>
+            {currentCategoryArray.map((item) => (
+              <li key={item.name}>
+                <Link to={`/product/${item.id}`}>
+                  {item.name} {item.price}$
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    style={{ width: "150px" }}
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>Not found</p>
+      )}
     </div>
   );
 }
